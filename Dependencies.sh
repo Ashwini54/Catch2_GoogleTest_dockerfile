@@ -2,7 +2,7 @@ echo "## INSTALLING PACKAGE ##"
 apt-get -y update 
 apt-get install -y tzdata 
 
-echo "##cINSTALLING CATCH2 & GOOGLETEST ##"
+echo "##INSTALLING CATCH2 & GOOGLETEST ##"
 apt-get -y update && \
     apt-get install -y build-essential && \
     apt-get install -y cmake protobuf-compiler &&  \
