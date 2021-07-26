@@ -1,26 +1,21 @@
+# Base Ubuntu image
 FROM ubuntu:20.04
-RUN apt-get update 
-RUN apt-get install -y tzdata 
 
-# Time-zone settings 
-RUN unlink /etc/localtime
-RUN ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime 
+# Setting Time-zone 
+ENV TZ=Asia/Kolkata
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-#INSTALLING CATCH & GOOGLETEST
-RUN apt-get -y update && \
-    apt-get install -y build-essential && \
-    apt-get install -y cmake protobuf-compiler &&  \
-    apt-get install -y git && \ 
-    apt-get install -y make
-
-RUN apt-get install -y libgtest-dev && \
-    apt-get install -y cmake
+#Specifying WORK DIRECTORY, copying and running Dependencies 
+WORKDIR /
+COPY Dependencies.sh .
+RUN chmod a+x Dependencies.sh && ./Dependencies.sh 
 
 #Testing_Googletest
-RUN cd /usr/src/gtest \
+    cd /usr/src/gtest \
     cmake CMakeLists.txt \
     make 
-    
+
+# Cloning GoolgeTest sample from github
 RUN git clone https://github.com/Ashwini54/googleTest_framework.git 
 RUN cd googleTest_framework \
     cd googleTest_framework-main \
@@ -30,6 +25,7 @@ RUN cd googleTest_framework \
     cd /
 
 #Testing_Catch2
+#Cloning Catch2 sample from github
 RUN git clone --single-branch --branch v2.x https://github.com/catchorg/Catch2.git
 RUN cd Catch2 \
     cmake -Bbuild -H. -DBUILD_TESTING=OFF \
@@ -37,6 +33,8 @@ RUN cd Catch2 \
     cd examples \
     g++ 020-TestCase-1.cpp \
     ./a.out 
-
+    
+#     /Catch2/examples/a.out 
+# EXPOSE 9000
 
 
