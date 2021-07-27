@@ -1,4 +1,4 @@
-echo "## INSTALLING PACKAGE ##"
+echo "## UPDATING & INSTALLING PACKAGE ##"
 apt-get -y update 
 apt-get install -y tzdata 
 
