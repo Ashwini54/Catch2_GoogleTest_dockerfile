@@ -2,7 +2,7 @@
 # Base Ubuntu image
 FROM ubuntu:20.04
 
-# Set the Time-zone 
+# Set the Environment variable for Time-zone 
 ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -26,7 +26,7 @@ RUN cd googleTest_framework \
     cd /
 
 #Testing_Catch2
-#Cloning Catch2 sample from github
+#Cloning Catch2 sample from github and building the file
 RUN git clone --single-branch --branch v2.x https://github.com/catchorg/Catch2.git
 RUN cd Catch2 \
     cmake -Bbuild -H. -DBUILD_TESTING=OFF \
