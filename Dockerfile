@@ -35,7 +35,3 @@ RUN cd Catch2 \
     g++ 020-TestCase-1.cpp \
     ./a.out 
     
-#     /Catch2/examples/a.out 
-# EXPOSE 9000
-
-
