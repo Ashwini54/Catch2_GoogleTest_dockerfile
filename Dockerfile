@@ -1,7 +1,8 @@
+# Dockerfile for building Catch2 and Googletest images based on ubuntu
 # Base Ubuntu image
 FROM ubuntu:20.04
 
-# Setting Time-zone 
+# Set the Time-zone 
 ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
