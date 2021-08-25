@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
  
+file(GLOB_RECURSE TEST_SOURCES *.cpp)
+
 Project(gtest)
 # Locate GTest
 find_package(GTest REQUIRED)
