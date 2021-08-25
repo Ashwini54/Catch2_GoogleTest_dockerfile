@@ -20,7 +20,7 @@ COPY Dependencies.sh .
 RUN chmod a+x Dependencies.sh && ./Dependencies.sh 
 
 RUN git clone https://github.com/google/googletest.git
-RUN /bin/bash -c 'chmod +x /Dependencies.sh'
+# RUN /bin/bash -c 'chmod +x /Dependencies.sh'
 
 
 
