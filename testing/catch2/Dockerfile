@@ -18,4 +18,6 @@ WORKDIR /
 COPY Dependencies.sh .
 COPY Catch2_testing .
 RUN chmod a+x Dependencies.sh && ./Dependencies.sh 
+RUN ls
 RUN /bin/bash -c 'chmod +x /Dependencies.sh'
+RUn ls
