@@ -16,9 +16,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 FROM builder AS build3
 WORKDIR /
 COPY Dependencies.sh .
-COPY googleTest_testing .
+# COPY googleTest_testing .
 RUN chmod a+x Dependencies.sh && ./Dependencies.sh 
 
+RUN git clone https://github.com/google/googletest.git
 RUN /bin/bash -c 'chmod +x /Dependencies.sh'
 
 
