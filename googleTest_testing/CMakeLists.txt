@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
  
 file(GLOB_RECURSE TEST_SOURCES *.cpp)
 
-Project(gtest)
+Project(gtest VERISON 3 LANGUAGE CXX)
 
 # Link include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 
