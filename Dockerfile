@@ -18,11 +18,12 @@ WORKDIR /
 COPY Dependencies.sh .
 # COPY googleTest_testing .
 RUN chmod a+x Dependencies.sh && ./Dependencies.sh 
-RUN /bin/bash -c 'chmod +x /Dependencies.sh'
+# RUN /bin/bash -c 'chmod +x /Dependencies.sh'
 RUN ls 
 RUN git clone https://github.com/google/googletest.git
 RUN ls
-RUN cd googletest && cmake CMakeLists.txt && make && ls && ./executeTests
+RUN cd googletest && cmake CMakeLists.txt && make && ls && 
+# ./executeTests
 
 
 # RUN /bin/bash -c 'chmod +x /Dependencies.sh'
