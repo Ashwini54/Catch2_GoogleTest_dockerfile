@@ -6,7 +6,7 @@ echo "##INSTALLING CATCH2  ##"
 apt-get -y update && \
     apt-get install -y build-essential && \
     apt-get install -y libgtest-dev &&  \
-    apt-get install -y git && \
+#     apt-get install -y git && \
     apt-get install -y cmake && \
     cd /usr/src/gtest && \
     cmake CMakeLists.txt && \
