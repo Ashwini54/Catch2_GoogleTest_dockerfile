@@ -84,6 +84,6 @@ jobs:
         run: |
            ls && docker build --rm=false . --file Dockerfile --tag gtestimage_automate:1 && ls 
       - name: run
-        run: docker run "gtestimage_automate:1" /bin/bash && cd googletest-master && ls && cd googletest && ls && cmake CMakeLists.txt && make && ls  
+        run: docker run "gtestimage_automate:1" /bin/bash && cd googletest-master && ls && cd googletest && ls && cd test && cmake CMakeLists.txt && make && ls  
            
           
