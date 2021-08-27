@@ -23,7 +23,7 @@ RUN ls
 RUN git clone https://github.com/google/googletest.git
 RUN ls
 RUN cd googletest && ls && cd googletest && ls 
-&& cd test && cmake CMakeLists.txt && make && ls && ./executeTests
+# && cd test && cmake CMakeLists.txt && make && ls && ./executeTests
 
 # RUN /bin/bash -c 'chmod +x /Dependencies.sh'
 
