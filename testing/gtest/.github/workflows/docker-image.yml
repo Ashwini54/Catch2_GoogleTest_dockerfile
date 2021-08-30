@@ -27,6 +27,7 @@ jobs:
             password: ${{ secrets.DOCKERHUB_PASSWORD }}
         - name: verify directory
           run: ls
+          
         - name: Build 
           run: |
            ls && docker build --rm=false . --file Dockerfile --tag gtest_image_automate:1  && ls 
