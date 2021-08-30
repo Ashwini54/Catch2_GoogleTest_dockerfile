@@ -20,9 +20,9 @@ COPY Dependencies.sh .
 RUN chmod a+x Dependencies.sh && ./Dependencies.sh 
 # RUN /bin/bash -c 'chmod +x /Dependencies.sh'
 RUN ls 
-RUN git clone https://github.com/google/googletest.git -b release-1.11.0
-RUN cd googletest && mkdir build && cd build && cmake .. 
-RUN ls && make
+RUN git clone https://github.com/Ashwini54/googleTest_framework.git
+RUN cd googleTest_framework && cd googleTest_framework-main && cmake CMakeLists.txt && make && ./executeTests
+
 
 
 # RUN git clone https://github.com/google/googletest.git
